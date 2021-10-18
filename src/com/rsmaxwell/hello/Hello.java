@@ -1,7 +1,5 @@
 package com.rsmaxwell.hello;
 
-import java.lang.reflect.Constructor;
-
 public class Hello {
 
 	public static void main(String[] args) throws Exception {
@@ -13,8 +11,7 @@ public class Hello {
 
 	public static <C extends T> void myfunc(Class<C> clazz) throws Exception {
 
-		Constructor<?> ctor = clazz.getConstructor();
-		T t = (T) ctor.newInstance();
+		T t = clazz.getConstructor().newInstance();
 
 		int thing = t.thing();
 		System.out.printf("thing = %d\n", thing);
